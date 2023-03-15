@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>report.html</title>
+    <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) { // eslint-disable-line no-redeclare
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function findAll(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sortColumn(elem) {
+    toggleSortStates(elem);
+    const colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    let key;
+    if (elem.classList.contains('result')) {
+        key = keyResult;
+    } else if (elem.classList.contains('links')) {
+        key = keyLink;
+    } else {
+        key = keyAlpha;
+    }
+    sortTable(elem, key(colIndex));
+}
+
+function showAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(showExtras);
+}
+
+function hideAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(hideExtras);
+}
+
+function showExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.remove('collapsed');
+    expandcollapse.classList.remove('expander');
+    expandcollapse.classList.add('collapser');
+}
+
+function hideExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.add('collapsed');
+    expandcollapse.classList.remove('collapser');
+    expandcollapse.classList.add('expander');
+}
+
+function showFilters() {
+    let visibleString = getQueryParameter('visible') || 'all';
+    visibleString = visibleString.toLowerCase();
+    const checkedItems = visibleString.split(',');
+
+    const filterItems = document.getElementsByClassName('filter');
+    for (let i = 0; i < filterItems.length; i++) {
+        filterItems[i].hidden = false;
+
+        if (visibleString != 'all') {
+            filterItems[i].checked = checkedItems.includes(filterItems[i].getAttribute('data-test-result'));
+            filterTable(filterItems[i]);
+        }
+    }
+}
+
+function addCollapse() {
+    // Add links for show/hide all
+    const resulttable = find('table#results-table');
+    const showhideall = document.createElement('p');
+    showhideall.innerHTML = '<a href="javascript:showAllExtras()">Show all details</a> / ' +
+                            '<a href="javascript:hideAllExtras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    findAll('.col-result').forEach(function(elem) {
+        const collapsed = getQueryParameter('collapsed') || 'Passed';
+        const extras = elem.parentNode.nextElementSibling;
+        const expandcollapse = document.createElement('span');
+        if (extras.classList.contains('collapsed')) {
+            expandcollapse.classList.add('expander');
+        } else if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add('collapsed');
+            expandcollapse.classList.add('expander');
+        } else {
+            expandcollapse.classList.add('collapser');
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener('click', function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains('collapsed')) {
+                showExtras(event.currentTarget);
+            } else {
+                hideExtras(event.currentTarget);
+            }
+        });
+    });
+}
+
+function getQueryParameter(name) {
+    const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () { // eslint-disable-line no-unused-vars
+    resetSortHeaders();
+
+    addCollapse();
+
+    showFilters();
+
+    sortColumn(find('.initial-sort'));
+
+    findAll('.sortable').forEach(function(elem) {
+        elem.addEventListener('click',
+            function() {
+                sortColumn(elem);
+            }, false);
+    });
+}
+
+function sortTable(clicked, keyFunc) {
+    const rows = findAll('.results-table-row');
+    const reversed = !clicked.classList.contains('asc');
+    const sortedRows = sort(rows, keyFunc, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    const thead = document.getElementById('results-table-head');
+    document.getElementById('results-table').remove();
+    const parent = document.createElement('table');
+    parent.id = 'results-table';
+    parent.appendChild(thead);
+    sortedRows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName('BODY')[0].appendChild(parent);
+}
+
+function sort(items, keyFunc, reversed) {
+    const sortArray = items.map(function(item, i) {
+        return [keyFunc(item), i];
+    });
+
+    sortArray.sort(function(a, b) {
+        const keyA = a[0];
+        const keyB = b[0];
+
+        if (keyA == keyB) return 0;
+
+        if (reversed) {
+            return keyA < keyB ? 1 : -1;
+        } else {
+            return keyA > keyB ? 1 : -1;
+        }
+    });
+
+    return sortArray.map(function(item) {
+        const index = item[1];
+        return items[index];
+    });
+}
+
+function keyAlpha(colIndex) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[colIndex].firstChild.data.toLowerCase();
+    };
+}
+
+function keyLink(colIndex) {
+    return function(elem) {
+        const dataCell = elem.childNodes[1].childNodes[colIndex].firstChild;
+        return dataCell == null ? '' : dataCell.innerText.toLowerCase();
+    };
+}
+
+function keyResult(colIndex) {
+    return function(elem) {
+        const strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+            'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[colIndex].firstChild.data);
+    };
+}
+
+function resetSortHeaders() {
+    findAll('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    findAll('.sortable').forEach(function(elem) {
+        const icon = document.createElement('div');
+        icon.className = 'sort-icon';
+        icon.textContent = 'vvv';
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove('desc', 'active');
+        elem.classList.add('asc', 'inactive');
+    });
+}
+
+function toggleSortStates(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        resetSortHeaders();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function isAllRowsHidden(value) {
+    return value.hidden == false;
+}
+
+function filterTable(elem) { // eslint-disable-line no-unused-vars
+    const outcomeAtt = 'data-test-result';
+    const outcome = elem.getAttribute(outcomeAtt);
+    const classOutcome = outcome + ' results-table-row';
+    const outcomeRows = document.getElementsByClassName(classOutcome);
+
+    for(let i = 0; i < outcomeRows.length; i++){
+        outcomeRows[i].hidden = !elem.checked;
+    }
+
+    const rows = findAll('.results-table-row').filter(isAllRowsHidden);
+    const allRowsHidden = rows.length == 0 ? true : false;
+    const notFoundMessage = document.getElementById('not-found-message');
+    notFoundMessage.hidden = !allRowsHidden;
+}
+</script>
+    <h1>report.html</h1>
+    <p>Report generated on 15-Mar-2023 at 00:02:36 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>Packages</td>
+        <td>{"pluggy": "1.0.0", "pytest": "7.2.2"}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Windows-10-10.0.19044-SP0</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{"html": "3.2.0", "metadata": "2.0.4"}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.11.0</td></tr></table>
+    <h2>Summary</h2>
+    <p>44 tests ran in 634.41 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">44 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable" col="duration">Duration</th>
+          <th class="sortable links" col="links">Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_acceptance.py::Testsecurity::test_Home_page_button[chrome]</td>
+          <td class="col-duration">11.71</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_Home_page_button:test_acceptance.py:12 Clicking on the home page icon takes the user back to the home page
+INFO     test_Home_page_button:test_acceptance.py:33 Pass:user in the homepage<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_acceptance.py::Testsecurity::test_Home_page_button[edge]</td>
+          <td class="col-duration">11.73</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_Home_page_button:test_acceptance.py:12 Clicking on the home page icon takes the user back to the home page
+INFO     test_Home_page_button:test_acceptance.py:33 Pass:user in the homepage<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_acceptance.py::Testsecurity::test_search_exist_movie_open_image[chrome]</td>
+          <td class="col-duration">8.87</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_search_exist_movie_open_image:test_acceptance.py:37 check if the search result open page appear image of the movie
+INFO     test_search_exist_movie_open_image:test_acceptance.py:52 Pass:movie image after search is appear<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_acceptance.py::Testsecurity::test_search_exist_movie_open_image[edge]</td>
+          <td class="col-duration">8.87</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_search_exist_movie_open_image:test_acceptance.py:37 check if the search result open page appear image of the movie
+INFO     test_search_exist_movie_open_image:test_acceptance.py:52 Pass:movie image after search is appear<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_acceptance.py::Testsecurity::test_serch_exist_movie_open_movie[chrome]</td>
+          <td class="col-duration">12.46</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_serch_exist_movie_open_movie:test_acceptance.py:56 check if the search result open page appear in it a movie image and clicking in the image open the movie information page
+INFO     test_serch_exist_movie_open_movie:test_acceptance.py:68 Pass:movie image after search is appear
+INFO     test_serch_exist_movie_open_movie:test_acceptance.py:75 Pass:click in the image after search the movie open movie page<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_acceptance.py::Testsecurity::test_serch_exist_movie_open_movie[edge]</td>
+          <td class="col-duration">11.77</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_serch_exist_movie_open_movie:test_acceptance.py:56 check if the search result open page appear in it a movie image and clicking in the image open the movie information page
+INFO     test_serch_exist_movie_open_movie:test_acceptance.py:68 Pass:movie image after search is appear
+INFO     test_serch_exist_movie_open_movie:test_acceptance.py:75 Pass:click in the image after search the movie open movie page<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_acceptance.py::Testsecurity::test_unexistmovie[chrome]</td>
+          <td class="col-duration">16.73</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_unexistmovie:test_acceptance.py:78 movie name that is not in the site
+INFO     test_unexistmovie:test_acceptance.py:91 Pass:return empty page<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_acceptance.py::Testsecurity::test_unexistmovie[edge]</td>
+          <td class="col-duration">16.61</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_unexistmovie:test_acceptance.py:78 movie name that is not in the site
+INFO     test_unexistmovie:test_acceptance.py:91 Pass:return empty page<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_acceptance.py::Testsecurity::test_sign_in_button_working[chrome]</td>
+          <td class="col-duration">5.55</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_sign_in_button_working:test_acceptance.py:95 Check if pressing the register button opens the sign in page
+INFO     test_sign_in_button_working:test_acceptance.py:101 Pass,Clicking the register button open the sign in page<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_acceptance.py::Testsecurity::test_sign_in_button_working[edge]</td>
+          <td class="col-duration">6.32</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_sign_in_button_working:test_acceptance.py:95 Check if pressing the register button opens the sign in page
+INFO     test_sign_in_button_working:test_acceptance.py:101 Pass,Clicking the register button open the sign in page<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_delete_movie[chrome]</td>
+          <td class="col-duration">13.63</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_delete_movie:test_functinal.py:11 Check if the admin can add and delete a movie
+INFO     test_delete_movie:test_functinal.py:29 Pass:the movie has been adding 
+INFO     test_delete_movie:test_functinal.py:41 Pass:the movie has been deleted<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_delete_movie[edge]</td>
+          <td class="col-duration">13.32</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_delete_movie:test_functinal.py:11 Check if the admin can add and delete a movie
+INFO     test_delete_movie:test_functinal.py:29 Pass:the movie has been adding 
+INFO     test_delete_movie:test_functinal.py:41 Pass:the movie has been deleted<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_add_movie[chrome]</td>
+          <td class="col-duration">13.96</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_add_movie:test_functinal.py:45 Check if the admin can add  a new movie
+INFO     test_add_movie:test_functinal.py:69 Pass:the movie has been adding<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_add_movie[edge]</td>
+          <td class="col-duration">13.45</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_add_movie:test_functinal.py:45 Check if the admin can add  a new movie
+INFO     test_add_movie:test_functinal.py:69 Pass:the movie has been adding<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_alter_title_description[chrome]</td>
+          <td class="col-duration">13.53</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_alter_title_description:test_functinal.py:73 Admin check if the movie title and description have changed after he put the information in the alter page
+INFO     test_alter_title_description:test_functinal.py:97 Pass:The movie title has changed
+INFO     test_alter_title_description:test_functinal.py:100 Pass:The movie description has  changed<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_alter_title_description[edge]</td>
+          <td class="col-duration">14.32</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_alter_title_description:test_functinal.py:73 Admin check if the movie title and description have changed after he put the information in the alter page
+INFO     test_alter_title_description:test_functinal.py:97 Pass:The movie title has changed
+INFO     test_alter_title_description:test_functinal.py:100 Pass:The movie description has  changed<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_alter_director_year_actors[chrome]</td>
+          <td class="col-duration">13.69</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_alter_director_year_actors:test_functinal.py:105 Admin check if the movie director and year and actors have changed after he put the information in the alter page
+INFO     test_alter_director_year_actors:test_functinal.py:130 Pass:The movie director has changed
+INFO     test_alter_director_year_actors:test_functinal.py:133 Pass:The movie release year has changed
+INFO     test_alter_director_year_actors:test_functinal.py:136 Pass:The movie actors has  changed<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_alter_director_year_actors[edge]</td>
+          <td class="col-duration">13.84</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_alter_director_year_actors:test_functinal.py:105 Admin check if the movie director and year and actors have changed after he put the information in the alter page
+INFO     test_alter_director_year_actors:test_functinal.py:130 Pass:The movie director has changed
+INFO     test_alter_director_year_actors:test_functinal.py:133 Pass:The movie release year has changed
+INFO     test_alter_director_year_actors:test_functinal.py:136 Pass:The movie actors has  changed<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_add_review_name[chrome]</td>
+          <td class="col-duration">13.12</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_add_review_name:test_functinal.py:140 Check if the user can write his name and review 
+INFO     test_add_review_name:test_functinal.py:165 Pass:review and name is written<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_add_review_name[edge]</td>
+          <td class="col-duration">11.88</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_add_review_name:test_functinal.py:140 Check if the user can write his name and review 
+INFO     test_add_review_name:test_functinal.py:165 Pass:review and name is written<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_add_name_rating[chrome]</td>
+          <td class="col-duration">12.13</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_add_name_rating:test_functinal.py:171 Check if the user can write his name and rating
+INFO     test_add_name_rating:test_functinal.py:193 Pass:rating and name is written<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_functinal.py::Testfunctinal::test_add_name_rating[edge]</td>
+          <td class="col-duration">11.94</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_add_name_rating:test_functinal.py:171 Check if the user can write his name and rating
+INFO     test_add_name_rating:test_functinal.py:193 Pass:rating and name is written<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_security.py::Testsecurity::test_incorrect_details1[chrome]</td>
+          <td class="col-duration">7.49</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_incorrect_details1:test_security.py:31 Writing wrong details prevents the browser from entering the site to the home page
+INFO     test_incorrect_details1:test_security.py:41 Pass:the user failed to login to the account<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_security.py::Testsecurity::test_incorrect_details1[edge]</td>
+          <td class="col-duration">7.60</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_incorrect_details1:test_security.py:31 Writing wrong details prevents the browser from entering the site to the home page
+INFO     test_incorrect_details1:test_security.py:41 Pass:the user failed to login to the account<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_security.py::Testsecurity::test_message_incorrect2[chrome]</td>
+          <td class="col-duration">8.25</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_message_incorrect2:test_security.py:45 Writing wrong details shows to the browser a message 
+INFO     test_message_incorrect2:test_security.py:56 Pass,The message incorrect email or password appear when the wrong details were typed<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_security.py::Testsecurity::test_message_incorrect2[edge]</td>
+          <td class="col-duration">7.83</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_message_incorrect2:test_security.py:45 Writing wrong details shows to the browser a message 
+INFO     test_message_incorrect2:test_security.py:56 Pass,The message incorrect email or password appear when the wrong details were typed<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_security.py::Testsecurity::test_admin_account[chrome]</td>
+          <td class="col-duration">9.37</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_admin_account:test_security.py:60  Check if the account of admin contains hreh for delete, alter and add movie
+INFO     test_admin_account:test_security.py:67 Pass:href for add movie appear
+INFO     test_admin_account:test_security.py:71 Pass:href for alter movie appear
+INFO     test_admin_account:test_security.py:74 Pass,href for delete movie appear<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_security.py::Testsecurity::test_admin_account[edge]</td>
+          <td class="col-duration">9.59</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_admin_account:test_security.py:60  Check if the account of admin contains hreh for delete, alter and add movie
+INFO     test_admin_account:test_security.py:67 Pass:href for add movie appear
+INFO     test_admin_account:test_security.py:71 Pass:href for alter movie appear
+INFO     test_admin_account:test_security.py:74 Pass,href for delete movie appear<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_security.py::Testsecurity::test_incorrect_email_format3[chrome]</td>
+          <td class="col-duration">9.32</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_incorrect_email_format3:test_security.py:78 Check if the user has entered an email 
+INFO     test_incorrect_email_format3:test_security.py:91 Pass,the message incorrect email format appear<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_security.py::Testsecurity::test_incorrect_email_format3[edge]</td>
+          <td class="col-duration">9.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_incorrect_email_format3:test_security.py:78 Check if the user has entered an email 
+INFO     test_incorrect_email_format3:test_security.py:91 Pass,the message incorrect email format appear<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_security.py::Testsecurity::test_Existing_account4[chrome]</td>
+          <td class="col-duration">5.93</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_Existing_account4:test_security.py:95 Try adding existing account 
+INFO     test_Existing_account4:test_security.py:107 Pass:the message email already exists<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_security.py::Testsecurity::test_Existing_account4[edge]</td>
+          <td class="col-duration">6.81</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_Existing_account4:test_security.py:95 Try adding existing account 
+INFO     test_Existing_account4:test_security.py:107 Pass:the message email already exists<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_admin_homepage1[chrome]</td>
+          <td class="col-duration">8.17</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_admin_homepage1:test_smoke.py:11 Writing the admin details opens the admin account (home_page_admin)
+INFO     test_admin_homepage1:test_smoke.py:20 Pass:The admin home page has been opened<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_admin_homepage1[edge]</td>
+          <td class="col-duration">8.25</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_admin_homepage1:test_smoke.py:11 Writing the admin details opens the admin account (home_page_admin)
+INFO     test_admin_homepage1:test_smoke.py:20 Pass:The admin home page has been opened<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_Add_page_open2[chrome]</td>
+          <td class="col-duration">11.59</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_Add_page_open2:test_smoke.py:23 Check if the alter page in the admin account exists
+INFO     test_Add_page_open2:test_smoke.py:33 Pass,The alter page in the admin account opened<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_Add_page_open2[edge]</td>
+          <td class="col-duration">10.53</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_Add_page_open2:test_smoke.py:23 Check if the alter page in the admin account exists
+INFO     test_Add_page_open2:test_smoke.py:33 Pass,The alter page in the admin account opened<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_Log_in_User3[chrome]</td>
+          <td class="col-duration">8.33</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_Log_in_User3:test_smoke.py:38 Writing the user details opens the admin account (home_page
+INFO     test_Log_in_User3:test_smoke.py:47 Pass:The user account has been opened<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_Log_in_User3[edge]</td>
+          <td class="col-duration">10.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_Log_in_User3:test_smoke.py:38 Writing the user details opens the admin account (home_page
+INFO     test_Log_in_User3:test_smoke.py:47 Pass:The user account has been opened<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_movie_info_pageuser_open4[chrome]</td>
+          <td class="col-duration">8.76</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_movie_info_pageuser_open4:test_smoke.py:51 Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+INFO     test_movie_info_pageuser_open4:test_smoke.py:64 Pass:The movie page is not shown to the user<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_movie_info_pageuser_open4[edge]</td>
+          <td class="col-duration">8.78</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_movie_info_pageuser_open4:test_smoke.py:51 Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+INFO     test_movie_info_pageuser_open4:test_smoke.py:64 Pass:The movie page is not shown to the user<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_movie_info_pageuser_open5[chrome]</td>
+          <td class="col-duration">8.35</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_movie_info_pageuser_open5:test_smoke.py:68 Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+INFO     test_movie_info_pageuser_open5:test_smoke.py:81 Pass:The movie page is not shown to the user<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_movie_info_pageuser_open5[edge]</td>
+          <td class="col-duration">9.15</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_movie_info_pageuser_open5:test_smoke.py:68 Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+INFO     test_movie_info_pageuser_open5:test_smoke.py:81 Pass:The movie page is not shown to the user<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_movie_info_pageadmin_open6[chrome]</td>
+          <td class="col-duration">7.19</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_movie_info_pageadmin_open6:test_smoke.py:85 Check if clicking on a specific image opens the movie page for the admin, the URL of the specified movie
+INFO     test_movie_info_pageadmin_open6:test_smoke.py:87 Check if the alter page in the admin account exists
+INFO     test_movie_info_pageadmin_open6:test_smoke.py:99 Pass:The movie page is not shown to the admin<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">selenim/test_smoke.py::TestSmoke::test_movie_info_pageadmin_open6[edge]</td>
+          <td class="col-duration">7.55</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_movie_info_pageadmin_open6:test_smoke.py:85 Check if clicking on a specific image opens the movie page for the admin, the URL of the specified movie
+INFO     test_movie_info_pageadmin_open6:test_smoke.py:87 Check if the alter page in the admin account exists
+INFO     test_movie_info_pageadmin_open6:test_smoke.py:99 Pass:The movie page is not shown to the admin<br/></div></td></tr></tbody></table></body></html>

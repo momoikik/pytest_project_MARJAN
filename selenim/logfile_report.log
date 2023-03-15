@@ -1,0 +1,492 @@
+2023-03-15 09:17:50,967 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 09:17:57,961 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 09:17:57,961 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 09:18:13,048 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 09:18:13,048 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 09:18:13,048 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 09:18:22,620 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 09:18:29,262 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 09:18:29,262 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 09:18:38,906 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 09:18:38,906 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 09:18:38,906 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 09:18:45,701 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 09:18:45,701 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 09:18:45,701 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 09:18:45,701 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 09:18:55,520 :INFO : test_search_exist_movie_open_image :check if the search result open page appear image of the movie
+2023-03-15 09:18:59,644 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 09:18:59,644 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 09:19:09,725 :INFO : test_search_exist_movie_open_image :check if the search result open page appear image of the movie
+2023-03-15 09:19:09,725 :INFO : test_search_exist_movie_open_image :check if the search result open page appear image of the movie
+2023-03-15 09:19:09,725 :INFO : test_search_exist_movie_open_image :check if the search result open page appear image of the movie
+2023-03-15 09:19:13,760 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 09:19:13,760 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 09:19:13,760 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 09:19:13,760 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 09:19:23,469 :INFO : test_serch_exist_movie_open_movie :check if the search result open page appear in it a movie image and clicking in the image open the movie information page
+2023-03-15 09:19:27,152 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 09:19:27,152 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 09:19:36,627 :INFO : test_serch_exist_movie_open_movie :check if the search result open page appear in it a movie image and clicking in the image open the movie information page
+2023-03-15 09:19:36,627 :INFO : test_serch_exist_movie_open_movie :check if the search result open page appear in it a movie image and clicking in the image open the movie information page
+2023-03-15 09:19:36,627 :INFO : test_serch_exist_movie_open_movie :check if the search result open page appear in it a movie image and clicking in the image open the movie information page
+2023-03-15 09:19:40,015 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 09:19:40,015 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 09:19:40,015 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 09:19:40,015 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 09:19:43,795 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 09:19:43,795 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 09:19:43,795 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 09:19:43,795 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 09:19:43,795 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 09:19:52,997 :INFO : test_unexistmovie :movie name that is not in the site
+2023-03-15 09:20:05,801 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 09:20:05,801 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 09:20:14,581 :INFO : test_unexistmovie :movie name that is not in the site
+2023-03-15 09:20:14,581 :INFO : test_unexistmovie :movie name that is not in the site
+2023-03-15 09:20:14,581 :INFO : test_unexistmovie :movie name that is not in the site
+2023-03-15 09:20:26,353 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 09:20:26,353 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 09:20:26,353 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 09:20:26,353 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 09:20:36,578 :INFO : test_sign_in_button_working :Check if pressing the register button opens the sign in page
+2023-03-15 09:20:37,260 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 09:20:37,260 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 09:20:46,617 :INFO : test_sign_in_button_working :Check if pressing the register button opens the sign in page
+2023-03-15 09:20:46,617 :INFO : test_sign_in_button_working :Check if pressing the register button opens the sign in page
+2023-03-15 09:20:46,617 :INFO : test_sign_in_button_working :Check if pressing the register button opens the sign in page
+2023-03-15 09:20:47,392 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 09:20:47,392 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 09:20:47,392 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 09:20:47,392 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 10:15:59,536 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 10:16:02,432 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 10:16:02,432 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 10:16:17,039 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 10:16:17,039 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 10:16:17,039 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 10:16:20,422 :ERROR : test_incorrect_details1 :The user entered into the site although the details are incorrect
+2023-03-15 10:16:20,422 :ERROR : test_incorrect_details1 :The user entered into the site although the details are incorrect
+2023-03-15 10:16:20,422 :ERROR : test_incorrect_details1 :The user entered into the site although the details are incorrect
+2023-03-15 10:16:20,422 :ERROR : test_incorrect_details1 :The user entered into the site although the details are incorrect
+2023-03-15 10:16:34,414 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 10:16:37,296 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 10:16:37,296 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 10:16:48,382 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 10:16:48,382 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 10:16:48,382 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 10:16:51,465 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 10:16:51,465 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 10:16:51,465 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 10:16:51,465 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 11:20:46,869 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 11:20:49,801 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 11:20:49,801 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 11:20:59,527 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 11:20:59,527 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 11:20:59,527 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 11:21:02,564 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 11:21:02,564 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 11:21:02,564 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 11:21:02,564 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 11:21:12,100 :INFO : test_message_incorrect2 :Writing wrong details shows to the browser a message 
+2023-03-15 11:21:22,832 :INFO : test_message_incorrect2 :Writing wrong details shows to the browser a message 
+2023-03-15 11:21:22,832 :INFO : test_message_incorrect2 :Writing wrong details shows to the browser a message 
+2023-03-15 11:21:30,260 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 11:21:34,256 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 11:21:34,256 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 11:21:34,508 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 11:21:34,508 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 11:21:34,508 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 11:21:34,548 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:34,548 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:34,548 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:34,548 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:44,210 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 11:21:44,210 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 11:21:44,210 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 11:21:44,210 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 11:21:44,210 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 11:21:48,106 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 11:21:48,106 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 11:21:48,106 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 11:21:48,106 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 11:21:48,106 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 11:21:48,106 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 11:21:48,507 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 11:21:48,507 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 11:21:48,507 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 11:21:48,507 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 11:21:48,507 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 11:21:48,507 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 11:21:48,507 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 11:21:48,600 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:48,600 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:48,600 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:48,600 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:48,600 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:48,600 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:48,600 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:48,600 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 11:21:58,643 :INFO : test_incorrect_email_format3 :Check if the user has entered an email 
+2023-03-15 11:22:03,968 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 11:22:03,968 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 11:22:14,363 :INFO : test_incorrect_email_format3 :Check if the user has entered an email 
+2023-03-15 11:22:14,363 :INFO : test_incorrect_email_format3 :Check if the user has entered an email 
+2023-03-15 11:22:14,363 :INFO : test_incorrect_email_format3 :Check if the user has entered an email 
+2023-03-15 11:22:18,735 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 11:22:18,735 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 11:22:18,735 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 11:22:18,735 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 11:22:28,599 :INFO : test_Existing_account4 :Try adding existing account 
+2023-03-15 11:22:30,207 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 11:22:30,207 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 11:22:41,632 :INFO : test_Existing_account4 :Try adding existing account 
+2023-03-15 11:22:41,632 :INFO : test_Existing_account4 :Try adding existing account 
+2023-03-15 11:22:41,632 :INFO : test_Existing_account4 :Try adding existing account 
+2023-03-15 11:22:43,044 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 11:22:43,044 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 11:22:43,044 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 11:22:43,044 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 13:24:54,070 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 13:25:00,579 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 13:25:00,579 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 13:25:10,017 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 13:25:10,017 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 13:25:10,017 :INFO : test_Home_page_button :Clicking on the home page icon takes the user back to the home page
+2023-03-15 13:25:16,786 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 13:25:16,786 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 13:25:16,786 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 13:25:16,786 :INFO : test_Home_page_button :Pass:user in the homepage
+2023-03-15 13:25:26,552 :INFO : test_search_exist_movie_open_image :check if the search result open page appear image of the movie
+2023-03-15 13:25:30,184 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 13:25:30,184 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 13:25:39,275 :INFO : test_search_exist_movie_open_image :check if the search result open page appear image of the movie
+2023-03-15 13:25:39,275 :INFO : test_search_exist_movie_open_image :check if the search result open page appear image of the movie
+2023-03-15 13:25:39,275 :INFO : test_search_exist_movie_open_image :check if the search result open page appear image of the movie
+2023-03-15 13:25:43,288 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 13:25:43,288 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 13:25:43,288 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 13:25:43,288 :INFO : test_search_exist_movie_open_image :Pass:movie image after search is appear
+2023-03-15 13:25:54,015 :INFO : test_serch_exist_movie_open_movie :check if the search result open page appear in it a movie image and clicking in the image open the movie information page
+2023-03-15 13:25:58,037 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 13:25:58,037 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 13:26:01,636 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 13:26:01,636 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 13:26:01,636 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 13:26:11,981 :INFO : test_serch_exist_movie_open_movie :check if the search result open page appear in it a movie image and clicking in the image open the movie information page
+2023-03-15 13:26:11,981 :INFO : test_serch_exist_movie_open_movie :check if the search result open page appear in it a movie image and clicking in the image open the movie information page
+2023-03-15 13:26:11,981 :INFO : test_serch_exist_movie_open_movie :check if the search result open page appear in it a movie image and clicking in the image open the movie information page
+2023-03-15 13:26:11,981 :INFO : test_serch_exist_movie_open_movie :check if the search result open page appear in it a movie image and clicking in the image open the movie information page
+2023-03-15 13:26:15,552 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 13:26:15,552 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 13:26:15,552 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 13:26:15,552 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 13:26:15,552 :INFO : test_serch_exist_movie_open_movie :Pass:movie image after search is appear
+2023-03-15 13:26:19,134 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 13:26:19,134 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 13:26:19,134 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 13:26:19,134 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 13:26:19,134 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 13:26:19,134 :INFO : test_serch_exist_movie_open_movie :Pass:click in the image after search the movie open movie page 
+2023-03-15 13:26:28,310 :INFO : test_unexistmovie :movie name that is not in the site
+2023-03-15 13:26:40,256 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 13:26:40,256 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 13:26:49,439 :INFO : test_unexistmovie :movie name that is not in the site
+2023-03-15 13:26:49,439 :INFO : test_unexistmovie :movie name that is not in the site
+2023-03-15 13:26:49,439 :INFO : test_unexistmovie :movie name that is not in the site
+2023-03-15 13:27:01,606 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 13:27:01,606 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 13:27:01,606 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 13:27:01,606 :INFO : test_unexistmovie :Pass:return empty page
+2023-03-15 13:27:11,000 :INFO : test_sign_in_button_working :Check if pressing the register button opens the sign in page
+2023-03-15 13:27:11,753 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 13:27:11,753 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 13:27:25,056 :INFO : test_sign_in_button_working :Check if pressing the register button opens the sign in page
+2023-03-15 13:27:25,056 :INFO : test_sign_in_button_working :Check if pressing the register button opens the sign in page
+2023-03-15 13:27:25,056 :INFO : test_sign_in_button_working :Check if pressing the register button opens the sign in page
+2023-03-15 13:27:25,846 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 13:27:25,846 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 13:27:25,846 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 13:27:25,846 :INFO : test_sign_in_button_working :Pass,Clicking the register button open the sign in page
+2023-03-15 13:28:04,107 :INFO : test_delete_movie :Check if the admin can add and delete a movie
+2023-03-15 13:28:10,810 :INFO : test_delete_movie :Pass:the movie has been adding 
+2023-03-15 13:28:10,810 :INFO : test_delete_movie :Pass:the movie has been adding 
+2023-03-15 13:28:12,427 :INFO : test_delete_movie :Pass:the movie has been deleted
+2023-03-15 13:28:12,427 :INFO : test_delete_movie :Pass:the movie has been deleted
+2023-03-15 13:28:12,427 :INFO : test_delete_movie :Pass:the movie has been deleted
+2023-03-15 13:28:25,029 :INFO : test_delete_movie :Check if the admin can add and delete a movie
+2023-03-15 13:28:25,029 :INFO : test_delete_movie :Check if the admin can add and delete a movie
+2023-03-15 13:28:25,029 :INFO : test_delete_movie :Check if the admin can add and delete a movie
+2023-03-15 13:28:25,029 :INFO : test_delete_movie :Check if the admin can add and delete a movie
+2023-03-15 13:28:32,103 :INFO : test_delete_movie :Pass:the movie has been adding 
+2023-03-15 13:28:32,103 :INFO : test_delete_movie :Pass:the movie has been adding 
+2023-03-15 13:28:32,103 :INFO : test_delete_movie :Pass:the movie has been adding 
+2023-03-15 13:28:32,103 :INFO : test_delete_movie :Pass:the movie has been adding 
+2023-03-15 13:28:32,103 :INFO : test_delete_movie :Pass:the movie has been adding 
+2023-03-15 13:28:33,706 :INFO : test_delete_movie :Pass:the movie has been deleted
+2023-03-15 13:28:33,706 :INFO : test_delete_movie :Pass:the movie has been deleted
+2023-03-15 13:28:33,706 :INFO : test_delete_movie :Pass:the movie has been deleted
+2023-03-15 13:28:33,706 :INFO : test_delete_movie :Pass:the movie has been deleted
+2023-03-15 13:28:33,706 :INFO : test_delete_movie :Pass:the movie has been deleted
+2023-03-15 13:28:33,706 :INFO : test_delete_movie :Pass:the movie has been deleted
+2023-03-15 13:28:42,957 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:28:50,848 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:28:50,848 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:29:03,412 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:29:03,412 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:29:03,412 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:29:11,501 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:29:11,501 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:29:11,501 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:29:11,501 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:29:20,873 :INFO : test_alter_title_description :Admin check if the movie title and description have changed after he put the information in the alter page
+2023-03-15 13:29:29,536 :INFO : test_alter_title_description :Pass:The movie title has changed
+2023-03-15 13:29:29,536 :INFO : test_alter_title_description :Pass:The movie title has changed
+2023-03-15 13:29:29,576 :INFO : test_alter_title_description :Pass:The movie description has  changed
+2023-03-15 13:29:29,576 :INFO : test_alter_title_description :Pass:The movie description has  changed
+2023-03-15 13:29:29,576 :INFO : test_alter_title_description :Pass:The movie description has  changed
+2023-03-15 13:29:38,727 :INFO : test_alter_title_description :Admin check if the movie title and description have changed after he put the information in the alter page
+2023-03-15 13:29:38,727 :INFO : test_alter_title_description :Admin check if the movie title and description have changed after he put the information in the alter page
+2023-03-15 13:29:38,727 :INFO : test_alter_title_description :Admin check if the movie title and description have changed after he put the information in the alter page
+2023-03-15 13:29:38,727 :INFO : test_alter_title_description :Admin check if the movie title and description have changed after he put the information in the alter page
+2023-03-15 13:29:47,440 :INFO : test_alter_title_description :Pass:The movie title has changed
+2023-03-15 13:29:47,440 :INFO : test_alter_title_description :Pass:The movie title has changed
+2023-03-15 13:29:47,440 :INFO : test_alter_title_description :Pass:The movie title has changed
+2023-03-15 13:29:47,440 :INFO : test_alter_title_description :Pass:The movie title has changed
+2023-03-15 13:29:47,440 :INFO : test_alter_title_description :Pass:The movie title has changed
+2023-03-15 13:29:47,475 :INFO : test_alter_title_description :Pass:The movie description has  changed
+2023-03-15 13:29:47,475 :INFO : test_alter_title_description :Pass:The movie description has  changed
+2023-03-15 13:29:47,475 :INFO : test_alter_title_description :Pass:The movie description has  changed
+2023-03-15 13:29:47,475 :INFO : test_alter_title_description :Pass:The movie description has  changed
+2023-03-15 13:29:47,475 :INFO : test_alter_title_description :Pass:The movie description has  changed
+2023-03-15 13:29:47,475 :INFO : test_alter_title_description :Pass:The movie description has  changed
+2023-03-15 13:29:57,210 :INFO : test_alter_director_year_actors :Admin check if the movie director and year and actors have changed after he put the information in the alter page
+2023-03-15 13:30:06,413 :INFO : test_alter_director_year_actors :Pass:The movie director has changed
+2023-03-15 13:30:06,413 :INFO : test_alter_director_year_actors :Pass:The movie director has changed
+2023-03-15 13:30:06,459 :INFO : test_alter_director_year_actors :Pass:The movie release year has changed
+2023-03-15 13:30:06,459 :INFO : test_alter_director_year_actors :Pass:The movie release year has changed
+2023-03-15 13:30:06,459 :INFO : test_alter_director_year_actors :Pass:The movie release year has changed
+2023-03-15 13:30:06,504 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:06,504 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:06,504 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:06,504 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:16,088 :INFO : test_alter_director_year_actors :Admin check if the movie director and year and actors have changed after he put the information in the alter page
+2023-03-15 13:30:16,088 :INFO : test_alter_director_year_actors :Admin check if the movie director and year and actors have changed after he put the information in the alter page
+2023-03-15 13:30:16,088 :INFO : test_alter_director_year_actors :Admin check if the movie director and year and actors have changed after he put the information in the alter page
+2023-03-15 13:30:16,088 :INFO : test_alter_director_year_actors :Admin check if the movie director and year and actors have changed after he put the information in the alter page
+2023-03-15 13:30:16,088 :INFO : test_alter_director_year_actors :Admin check if the movie director and year and actors have changed after he put the information in the alter page
+2023-03-15 13:30:25,234 :INFO : test_alter_director_year_actors :Pass:The movie director has changed
+2023-03-15 13:30:25,234 :INFO : test_alter_director_year_actors :Pass:The movie director has changed
+2023-03-15 13:30:25,234 :INFO : test_alter_director_year_actors :Pass:The movie director has changed
+2023-03-15 13:30:25,234 :INFO : test_alter_director_year_actors :Pass:The movie director has changed
+2023-03-15 13:30:25,234 :INFO : test_alter_director_year_actors :Pass:The movie director has changed
+2023-03-15 13:30:25,234 :INFO : test_alter_director_year_actors :Pass:The movie director has changed
+2023-03-15 13:30:25,271 :INFO : test_alter_director_year_actors :Pass:The movie release year has changed
+2023-03-15 13:30:25,271 :INFO : test_alter_director_year_actors :Pass:The movie release year has changed
+2023-03-15 13:30:25,271 :INFO : test_alter_director_year_actors :Pass:The movie release year has changed
+2023-03-15 13:30:25,271 :INFO : test_alter_director_year_actors :Pass:The movie release year has changed
+2023-03-15 13:30:25,271 :INFO : test_alter_director_year_actors :Pass:The movie release year has changed
+2023-03-15 13:30:25,271 :INFO : test_alter_director_year_actors :Pass:The movie release year has changed
+2023-03-15 13:30:25,271 :INFO : test_alter_director_year_actors :Pass:The movie release year has changed
+2023-03-15 13:30:25,305 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:25,305 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:25,305 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:25,305 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:25,305 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:25,305 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:25,305 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:25,305 :INFO : test_alter_director_year_actors :Pass:The movie actors has  changed
+2023-03-15 13:30:34,350 :INFO : test_add_review_name :Check if the user can write his name and review 
+2023-03-15 13:30:41,592 :INFO : test_add_review_name :Pass:review and name is written
+2023-03-15 13:30:41,592 :INFO : test_add_review_name :Pass:review and name is written
+2023-03-15 13:30:54,466 :INFO : test_add_review_name :Check if the user can write his name and review 
+2023-03-15 13:30:54,466 :INFO : test_add_review_name :Check if the user can write his name and review 
+2023-03-15 13:30:54,466 :INFO : test_add_review_name :Check if the user can write his name and review 
+2023-03-15 13:31:01,607 :INFO : test_add_review_name :Pass:review and name is written
+2023-03-15 13:31:01,607 :INFO : test_add_review_name :Pass:review and name is written
+2023-03-15 13:31:01,607 :INFO : test_add_review_name :Pass:review and name is written
+2023-03-15 13:31:01,607 :INFO : test_add_review_name :Pass:review and name is written
+2023-03-15 13:31:10,993 :INFO : test_add_name_rating :Check if the user can write his name and rating
+2023-03-15 13:31:17,309 :INFO : test_add_name_rating :Pass:rating and name is written
+2023-03-15 13:31:17,309 :INFO : test_add_name_rating :Pass:rating and name is written
+2023-03-15 13:31:29,472 :INFO : test_add_name_rating :Check if the user can write his name and rating
+2023-03-15 13:31:29,472 :INFO : test_add_name_rating :Check if the user can write his name and rating
+2023-03-15 13:31:29,472 :INFO : test_add_name_rating :Check if the user can write his name and rating
+2023-03-15 13:31:35,983 :INFO : test_add_name_rating :Pass:rating and name is written
+2023-03-15 13:31:35,983 :INFO : test_add_name_rating :Pass:rating and name is written
+2023-03-15 13:31:35,983 :INFO : test_add_name_rating :Pass:rating and name is written
+2023-03-15 13:31:35,983 :INFO : test_add_name_rating :Pass:rating and name is written
+2023-03-15 13:32:35,290 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 13:32:38,081 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 13:32:38,081 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 13:32:47,531 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 13:32:47,531 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 13:32:47,531 :INFO : test_incorrect_details1 :Writing wrong details prevents the browser from entering the site to the home page
+2023-03-15 13:32:50,828 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 13:32:50,828 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 13:32:50,828 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 13:32:50,828 :INFO : test_incorrect_details1 :Pass:the user failed to login to the account
+2023-03-15 13:33:00,807 :INFO : test_message_incorrect2 :Writing wrong details shows to the browser a message 
+2023-03-15 13:33:03,774 :INFO : test_message_incorrect2 :Pass,The message incorrect email or password appear when the wrong details were typed
+2023-03-15 13:33:03,774 :INFO : test_message_incorrect2 :Pass,The message incorrect email or password appear when the wrong details were typed
+2023-03-15 13:33:15,343 :INFO : test_message_incorrect2 :Writing wrong details shows to the browser a message 
+2023-03-15 13:33:15,343 :INFO : test_message_incorrect2 :Writing wrong details shows to the browser a message 
+2023-03-15 13:33:15,343 :INFO : test_message_incorrect2 :Writing wrong details shows to the browser a message 
+2023-03-15 13:33:18,433 :INFO : test_message_incorrect2 :Pass,The message incorrect email or password appear when the wrong details were typed
+2023-03-15 13:33:18,433 :INFO : test_message_incorrect2 :Pass,The message incorrect email or password appear when the wrong details were typed
+2023-03-15 13:33:18,433 :INFO : test_message_incorrect2 :Pass,The message incorrect email or password appear when the wrong details were typed
+2023-03-15 13:33:18,433 :INFO : test_message_incorrect2 :Pass,The message incorrect email or password appear when the wrong details were typed
+2023-03-15 13:33:27,397 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 13:33:31,357 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 13:33:31,357 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 13:33:31,761 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 13:33:31,761 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 13:33:31,761 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 13:33:31,801 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:31,801 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:31,801 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:31,801 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:41,028 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 13:33:41,028 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 13:33:41,028 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 13:33:41,028 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 13:33:41,028 :INFO : test_admin_account : Check if the account of admin contains hreh for delete, alter and add movie
+2023-03-15 13:33:45,345 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 13:33:45,345 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 13:33:45,345 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 13:33:45,345 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 13:33:45,345 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 13:33:45,345 :INFO : test_admin_account :Pass:href for add movie appear
+2023-03-15 13:33:45,703 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 13:33:45,703 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 13:33:45,703 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 13:33:45,703 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 13:33:45,703 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 13:33:45,703 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 13:33:45,703 :INFO : test_admin_account :Pass:href for alter movie appear
+2023-03-15 13:33:45,778 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:45,778 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:45,778 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:45,778 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:45,778 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:45,778 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:45,778 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:45,778 :INFO : test_admin_account :Pass,href for delete movie appear
+2023-03-15 13:33:54,755 :INFO : test_incorrect_email_format3 :Check if the user has entered an email 
+2023-03-15 13:33:59,107 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 13:33:59,107 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 13:34:17,546 :INFO : test_incorrect_email_format3 :Check if the user has entered an email 
+2023-03-15 13:34:17,546 :INFO : test_incorrect_email_format3 :Check if the user has entered an email 
+2023-03-15 13:34:17,546 :INFO : test_incorrect_email_format3 :Check if the user has entered an email 
+2023-03-15 13:34:21,753 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 13:34:21,753 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 13:34:21,753 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 13:34:21,753 :INFO : test_incorrect_email_format3 :Pass,the message incorrect email format appear
+2023-03-15 13:34:30,999 :INFO : test_Existing_account4 :Try adding existing account 
+2023-03-15 13:34:32,762 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 13:34:32,762 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 13:34:44,770 :INFO : test_Existing_account4 :Try adding existing account 
+2023-03-15 13:34:44,770 :INFO : test_Existing_account4 :Try adding existing account 
+2023-03-15 13:34:44,770 :INFO : test_Existing_account4 :Try adding existing account 
+2023-03-15 13:34:46,138 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 13:34:46,138 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 13:34:46,138 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 13:34:46,138 :INFO : test_Existing_account4 :Pass:the message email already exists
+2023-03-15 13:40:32,181 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:40:39,985 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:40:39,985 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:40:51,751 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:40:51,751 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:40:51,751 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:41:00,022 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:41:00,022 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:41:00,022 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:41:00,022 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:42:33,638 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:42:41,531 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:42:41,531 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:42:50,775 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:42:50,775 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:42:50,775 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:42:58,653 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:42:58,653 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:42:58,653 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:42:58,653 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:44:18,642 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:44:26,877 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:44:26,877 :INFO : test_add_movie :Pass:the movie has been adding
+2023-03-15 13:44:38,855 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:44:38,855 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:44:38,855 :INFO : test_add_movie :Check if the admin can add  a new movie
+2023-03-15 13:45:47,443 :INFO : test_admin_homepage1 :Writing the admin details opens the admin account (home_page_admin)
+2023-03-15 13:45:51,237 :INFO : test_admin_homepage1 :Pass:The admin home page has been opened
+2023-03-15 13:45:51,237 :INFO : test_admin_homepage1 :Pass:The admin home page has been opened
+2023-03-15 13:46:03,143 :INFO : test_admin_homepage1 :Writing the admin details opens the admin account (home_page_admin)
+2023-03-15 13:46:03,143 :INFO : test_admin_homepage1 :Writing the admin details opens the admin account (home_page_admin)
+2023-03-15 13:46:03,143 :INFO : test_admin_homepage1 :Writing the admin details opens the admin account (home_page_admin)
+2023-03-15 13:46:06,758 :INFO : test_admin_homepage1 :Pass:The admin home page has been opened
+2023-03-15 13:46:06,758 :INFO : test_admin_homepage1 :Pass:The admin home page has been opened
+2023-03-15 13:46:06,758 :INFO : test_admin_homepage1 :Pass:The admin home page has been opened
+2023-03-15 13:46:06,758 :INFO : test_admin_homepage1 :Pass:The admin home page has been opened
+2023-03-15 13:46:16,104 :INFO : test_Add_page_open2 :Check if the alter page in the admin account exists
+2023-03-15 13:46:21,538 :INFO : test_Add_page_open2 :Pass,The alter page in the admin account opened
+2023-03-15 13:46:21,538 :INFO : test_Add_page_open2 :Pass,The alter page in the admin account opened
+2023-03-15 13:46:33,122 :INFO : test_Add_page_open2 :Check if the alter page in the admin account exists
+2023-03-15 13:46:33,122 :INFO : test_Add_page_open2 :Check if the alter page in the admin account exists
+2023-03-15 13:46:33,122 :INFO : test_Add_page_open2 :Check if the alter page in the admin account exists
+2023-03-15 13:46:38,594 :INFO : test_Add_page_open2 :Pass,The alter page in the admin account opened
+2023-03-15 13:46:38,594 :INFO : test_Add_page_open2 :Pass,The alter page in the admin account opened
+2023-03-15 13:46:38,594 :INFO : test_Add_page_open2 :Pass,The alter page in the admin account opened
+2023-03-15 13:46:38,594 :INFO : test_Add_page_open2 :Pass,The alter page in the admin account opened
+2023-03-15 13:46:47,963 :INFO : test_Log_in_User3 :Writing the user details opens the admin account (home_page
+2023-03-15 13:46:51,465 :INFO : test_Log_in_User3 :Pass:The user account has been opened
+2023-03-15 13:46:51,465 :INFO : test_Log_in_User3 :Pass:The user account has been opened
+2023-03-15 13:47:00,676 :INFO : test_Log_in_User3 :Writing the user details opens the admin account (home_page
+2023-03-15 13:47:00,676 :INFO : test_Log_in_User3 :Writing the user details opens the admin account (home_page
+2023-03-15 13:47:00,676 :INFO : test_Log_in_User3 :Writing the user details opens the admin account (home_page
+2023-03-15 13:47:04,460 :INFO : test_Log_in_User3 :Pass:The user account has been opened
+2023-03-15 13:47:04,460 :INFO : test_Log_in_User3 :Pass:The user account has been opened
+2023-03-15 13:47:04,460 :INFO : test_Log_in_User3 :Pass:The user account has been opened
+2023-03-15 13:47:04,460 :INFO : test_Log_in_User3 :Pass:The user account has been opened
+2023-03-15 13:47:13,752 :INFO : test_movie_info_pageuser_open4 :Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+2023-03-15 13:47:17,403 :INFO : test_movie_info_pageuser_open4 :Pass:The movie page is not shown to the user
+2023-03-15 13:47:17,403 :INFO : test_movie_info_pageuser_open4 :Pass:The movie page is not shown to the user
+2023-03-15 13:47:26,285 :INFO : test_movie_info_pageuser_open4 :Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+2023-03-15 13:47:26,285 :INFO : test_movie_info_pageuser_open4 :Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+2023-03-15 13:47:26,285 :INFO : test_movie_info_pageuser_open4 :Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+2023-03-15 13:47:30,092 :INFO : test_movie_info_pageuser_open4 :Pass:The movie page is not shown to the user
+2023-03-15 13:47:30,092 :INFO : test_movie_info_pageuser_open4 :Pass:The movie page is not shown to the user
+2023-03-15 13:47:30,092 :INFO : test_movie_info_pageuser_open4 :Pass:The movie page is not shown to the user
+2023-03-15 13:47:30,092 :INFO : test_movie_info_pageuser_open4 :Pass:The movie page is not shown to the user
+2023-03-15 13:47:40,502 :INFO : test_movie_info_pageuser_open5 :Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+2023-03-15 13:47:44,108 :INFO : test_movie_info_pageuser_open5 :Pass:The movie page is not shown to the user
+2023-03-15 13:47:44,108 :INFO : test_movie_info_pageuser_open5 :Pass:The movie page is not shown to the user
+2023-03-15 13:47:53,132 :INFO : test_movie_info_pageuser_open5 :Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+2023-03-15 13:47:53,132 :INFO : test_movie_info_pageuser_open5 :Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+2023-03-15 13:47:53,132 :INFO : test_movie_info_pageuser_open5 :Check if clicking on a specific image opens the movie page for the user, the URL of the specified movie
+2023-03-15 13:47:56,950 :INFO : test_movie_info_pageuser_open5 :Pass:The movie page is not shown to the user
+2023-03-15 13:47:56,950 :INFO : test_movie_info_pageuser_open5 :Pass:The movie page is not shown to the user
+2023-03-15 13:47:56,950 :INFO : test_movie_info_pageuser_open5 :Pass:The movie page is not shown to the user
+2023-03-15 13:47:56,950 :INFO : test_movie_info_pageuser_open5 :Pass:The movie page is not shown to the user
+2023-03-15 13:48:06,252 :INFO : test_movie_info_pageadmin_open6 :Check if clicking on a specific image opens the movie page for the admin, the URL of the specified movie
+2023-03-15 13:48:06,262 :INFO : test_movie_info_pageadmin_open6 :Check if the alter page in the admin account exists
+2023-03-15 13:48:06,262 :INFO : test_movie_info_pageadmin_open6 :Check if the alter page in the admin account exists
+2023-03-15 13:48:09,156 :INFO : test_movie_info_pageadmin_open6 :Pass:The movie page is not shown to the admin
+2023-03-15 13:48:09,156 :INFO : test_movie_info_pageadmin_open6 :Pass:The movie page is not shown to the admin
+2023-03-15 13:48:09,156 :INFO : test_movie_info_pageadmin_open6 :Pass:The movie page is not shown to the admin
+2023-03-15 13:48:18,370 :INFO : test_movie_info_pageadmin_open6 :Check if clicking on a specific image opens the movie page for the admin, the URL of the specified movie
+2023-03-15 13:48:18,370 :INFO : test_movie_info_pageadmin_open6 :Check if clicking on a specific image opens the movie page for the admin, the URL of the specified movie
+2023-03-15 13:48:18,370 :INFO : test_movie_info_pageadmin_open6 :Check if clicking on a specific image opens the movie page for the admin, the URL of the specified movie
+2023-03-15 13:48:18,370 :INFO : test_movie_info_pageadmin_open6 :Check if clicking on a specific image opens the movie page for the admin, the URL of the specified movie
+2023-03-15 13:48:18,387 :INFO : test_movie_info_pageadmin_open6 :Check if the alter page in the admin account exists
+2023-03-15 13:48:18,387 :INFO : test_movie_info_pageadmin_open6 :Check if the alter page in the admin account exists
+2023-03-15 13:48:18,387 :INFO : test_movie_info_pageadmin_open6 :Check if the alter page in the admin account exists
+2023-03-15 13:48:18,387 :INFO : test_movie_info_pageadmin_open6 :Check if the alter page in the admin account exists
+2023-03-15 13:48:18,387 :INFO : test_movie_info_pageadmin_open6 :Check if the alter page in the admin account exists
+2023-03-15 13:48:20,812 :INFO : test_movie_info_pageadmin_open6 :Pass:The movie page is not shown to the admin
+2023-03-15 13:48:20,812 :INFO : test_movie_info_pageadmin_open6 :Pass:The movie page is not shown to the admin
+2023-03-15 13:48:20,812 :INFO : test_movie_info_pageadmin_open6 :Pass:The movie page is not shown to the admin
+2023-03-15 13:48:20,812 :INFO : test_movie_info_pageadmin_open6 :Pass:The movie page is not shown to the admin
+2023-03-15 13:48:20,812 :INFO : test_movie_info_pageadmin_open6 :Pass:The movie page is not shown to the admin
+2023-03-15 13:48:20,812 :INFO : test_movie_info_pageadmin_open6 :Pass:The movie page is not shown to the admin
